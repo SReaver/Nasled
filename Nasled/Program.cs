@@ -10,6 +10,10 @@ namespace Nasled
     {
         static void Main(string[] args)
         {
+            Flash flash = new Flash();
+            flash.Name = "King";
+            flash.Model = "4GB";
+            flash.Memory = 4000;
         }
     }
 }
