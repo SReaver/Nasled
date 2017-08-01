@@ -6,26 +6,33 @@ using System.Threading.Tasks;
 
 namespace Nasled
 {
-    class Flash : Storage
+    public class Flash : Storage
     {
-        public override void Copy()
+        private double freeSize;
+
+        public Flash(string name, double memory, string model)
         {
-            throw new NotImplementedException();
+            Name = name;
+            Model = model;
+            Memory = memory;
+            freeSize = memory;
+
+            Program.myNositeli.Add(this);
         }
 
-        public override void CopyInfo()
+        public override double getMemory() { return Memory; }
+        public override void Copy(double infoSize)
         {
-            throw new NotImplementedException();
+            freeSize -= infoSize;
+            //return time;
+        }
+        public override double getFreeMemory() { return freeSize; }
+        public override void GetInfo() { }
+        public override double CopyInfo(double infoSize)
+        {
+            return infoSize * (int)speedType.USB3;
         }
 
-        public override double getFreeMemory()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override double getMemory()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

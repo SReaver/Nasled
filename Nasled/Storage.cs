@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Nasled
 {
-    abstract class Storage
+   public abstract class Storage
     {
         protected string name;
         protected string model;
@@ -38,8 +38,10 @@ namespace Nasled
         }
 
         public abstract double getMemory();
-        public abstract void Copy();
+        public abstract void Copy(double infoSize);
         public abstract double getFreeMemory();
-        public abstract void CopyInfo();
+        public abstract double CopyInfo(double infoSize);
+        public abstract void GetInfo();
+        public enum speedType { USB3=300, USB2=150, USB1=50 };
     }
 }
