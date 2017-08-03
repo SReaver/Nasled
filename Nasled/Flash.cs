@@ -16,6 +16,7 @@ namespace Nasled
             Model = model;
             Memory = memory;
             freeSize = memory;
+            Program.AllMemory += Memory;
 
             Program.myNositeli.Add(this);
         }

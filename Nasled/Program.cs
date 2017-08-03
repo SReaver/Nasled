@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Nasled
 {
+   
     class Program
     {
+        public static double AllMemory;
         public delegate void MyD();
 
         public static List<object> myNositeli = new List<object>();
@@ -18,23 +20,23 @@ namespace Nasled
             flash.Copy(3456);
 
 
-            MyD myD;
+            //MyD myD;
 
-            myD = Program.TestMsg()
-                ;
-            myD.Invoke();
+            //myD = Program.TestMsg()
+            //    ;
+            //myD.Invoke();
 
             Console.WriteLine(flash.CopyInfo(3456)+" "+  flash.getFreeMemory());
             List<double> obj = new List<double>();
             obj.Add(flash.Memory);
 
-            double tt=0;
-            foreach (var item in obj)
-            {
-                tt += item;
+            //double tt=0;
+            //foreach (var item in obj)
+            //{
+            //    tt += item;
                 
-            }
-            Console.WriteLine(tt);
+            //}
+            //Console.WriteLine(tt);
 
             foreach (var item in myNositeli)
             {
